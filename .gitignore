@@ -22,3 +22,38 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Backend
+*.log
+*.pid
+*.seed
+*.sqlite
+*.sqlite3
+*.env
+
+# Frontend
+build/
+dist/
+node_modules/
+yarn-error.log
+coverage/
+*.log
+*.log.*
+
+# Editor
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Other
+.DS_Store
+Thumbs.db
+
