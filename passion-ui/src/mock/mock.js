@@ -22,3 +22,6 @@ Mock.mock('http://localhost:8080/menu', {
     'name': 'menu', // 名称为menu
     'order|1-20': 5, // 排序1-20之间
 })
+Mock.mock('http://localhost:8001/login',{
+    'token': '332fr3e3rfsdfd'
+})

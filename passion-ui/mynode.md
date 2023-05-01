@@ -65,3 +65,33 @@ yarn install //安装依赖
 ```java
 npm run dev
 ```
+
+```js
+// 删除
+export const batchDelete = (data) => {
+    return axios({
+        url: '/menu/delete',
+        method: 'post',
+        data
+    })
+}
+// 查找导航菜单树
+export const findNavTree = (params) => {
+    return axios({
+        url: '/menu/findNavTree',
+        method: 'get',
+        params
+    })
+}
+```
+
+在这个代码中，data和params之间是有区别的。
+
+
+data代表请求体（request body）中的数据。它通常用于POST请求，将数据作为有效负载发送到服务器端。
+
+
+params代表查询参数（query parameters），它通常用于GET请求，将参数附加到URL的查询字符串中发送给服务器端。在上述代码中，findNavTree函数使用的是GET请求，并且查询参数被添加到URL的末尾部分。
+
+
+因此，data和params是传递给Axios请求的参数，并且在请求类型、发送方式和接收方式上存在区别。
