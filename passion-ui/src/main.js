@@ -7,8 +7,9 @@ import ElementUI from 'element-ui'
 import i18n from './i18n'
 import api from './http' //导入api模块
 import global from '@/utils/global'
+import store from './store'
 import 'element-ui/lib/theme-chalk/index.css'
-// import 'font-awesome/css/font-awesome.min.css'
+import 'font-awesome/css/font-awesome.min.css'
 
 
 
@@ -23,6 +24,7 @@ new Vue({
   el: '#app',
   i18n,
   router,
+  store,
   render: h => h(App)
   // components: { App },
   // template: '<App/>'
