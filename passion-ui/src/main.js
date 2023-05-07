@@ -8,7 +8,7 @@ import i18n from './i18n'
 import api from './http' //导入api模块
 import global from '@/utils/global'
 import 'element-ui/lib/theme-chalk/index.css'
-import 'font-awesome/css/font-awesome.min.css'
+// import 'font-awesome/css/font-awesome.min.css'
 
 
 
