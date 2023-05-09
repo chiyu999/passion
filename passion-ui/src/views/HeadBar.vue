@@ -73,14 +73,14 @@ import mock from "@/mock/index"
 import Hamburger from "@/components/Hamburger"
 import ThemePicker from "@/components/ThemePicker"
 import NoticePanel from "@/views/Core/NoticePanel"
-//import MessagePanel from "@/views/Core/MessagePanel"
+import MessagePanel from "@/views/Core/MessagePanel"
 import PersonalPanel from "@/views/Core/PersonalPanel"
 export default {
   components:{
     Hamburger,
     ThemePicker,
     NoticePanel,
-    // MessagePanel,
+    MessagePanel,
     PersonalPanel
   },
   data() {
