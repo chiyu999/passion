@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
 import Home from '@/views/Home'
+import Intro from '@/views/Intro/Intro'
 import NotFound from '@/views/404'
 import api from '@/http/api'
 import store from '@/store'
@@ -14,7 +15,17 @@ const router = new Router({
       path: '/',
       name: '首页',
       component: Home,
-      children: []
+      children: [
+        { 
+          path: '', 
+          name: '系统介绍', 
+          component: Intro,
+          meta: {
+            icon: 'fa fa-home fa-lg',
+            index: 0
+          }
+        }
+      ]
     },
     {
       path: '/login',
