@@ -1,8 +1,15 @@
+/*
+ * @Author: chixiaoyu 
+ * @Date: 2023-05-11 19:00:56 
+ * @Last Modified by: chixiaoyu
+ * @Last Modified time: 2023-05-11 23:50:14
+ */
 <template>
     <el-button :size="size" :type="type" :icon="icon" :loading="loading" :disabled="!hasPerms(perms)" @click="handleClick">
-        {{ lable }}
+        {{ label }}
     </el-button>
 </template>
+  
 <script>
 import { hasPermission } from '@/permission/index.js'
 export default {
@@ -55,7 +62,5 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>
+  
+<style scoped></style>

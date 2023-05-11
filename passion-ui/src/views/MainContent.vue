@@ -1,10 +1,10 @@
 /*
  * @Author: chixiaoyu 
- * @Date: 2023-05-10 21:27:28 
+ * @Date: 2023-05-10 23:52:45 
  * @Last Modified by: chixiaoyu
- * @Last Modified time: 2023-05-10 21:42:39
+ * @Last Modified time: 2023-05-11 19:21:28
  */
- <template>
+<template>
   <div id="main-container" class="main-container" :class="$store.state.app.collapse?'position-collapse-left':'position-left'">
     <!-- 标签页 -->
     <div class="tab-container">

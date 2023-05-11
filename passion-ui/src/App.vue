@@ -1,6 +1,11 @@
+/*
+ * @Author: chixiaoyu 
+ * @Date: 2023-05-10 23:52:11 
+ * @Last Modified by: chixiaoyu
+ * @Last Modified time: 2023-05-11 19:46:01
+ */
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view/>
   </div>
 </template>

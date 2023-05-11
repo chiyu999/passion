@@ -2,21 +2,21 @@
  * @Author: chixiaoyu 
  * @Date: 2023-05-10 21:08:06 
  * @Last Modified by: chixiaoyu
- * @Last Modified time: 2023-05-10 21:13:38
+ * @Last Modified time: 2023-05-10 23:33:27
  */
 export default {
     state: {
-        navTree: [],  // 导航菜单树
-    },
-    getters: {
-   
+        // 主入口标签页
+        mainTabs: [],
+        // 当前标签页名
+        mainTabsActiveName: ''
     },
     mutations: {
-        setNavTree(state, navTree){  // 设置导航菜单树
-            state.navTree = navTree;
+        updateMainTabs(state, tabs) {
+            state.mainTabs = tabs
+        },
+        updateMainTabsActiveName(state, name) {
+            state.mainTabsActiveName = name
         }
-    },
-    actions: {
-        
     }
 }

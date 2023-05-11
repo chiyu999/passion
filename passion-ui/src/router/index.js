@@ -1,8 +1,15 @@
+/*
+ * @Author: chixiaoyu 
+ * @Date: 2023-05-11 19:12:44 
+ * @Last Modified by: chixiaoyu
+ * @Last Modified time: 2023-05-11 23:40:28
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
 import Home from '@/views/Home'
 import Intro from '@/views/Intro/Intro'
+// import User from '@/views/Sys/user'
 import NotFound from '@/views/404'
 import api from '@/http/api'
 import store from '@/store'
@@ -16,9 +23,9 @@ const router = new Router({
       name: '首页',
       component: Home,
       children: [
-        { 
-          path: '', 
-          name: '系统介绍', 
+        {
+          path: '',
+          name: '系统介绍',
           component: Intro,
           meta: {
             icon: 'fa fa-home fa-lg',
@@ -46,7 +53,7 @@ router.beforeEach((to, from, next) => {
   let userName = sessionStorage.getItem('user')
   if (to.path === '/login') {
     // 如果是访问登录界面，如果用户会话信息存在，代表已登录过，跳转到主页
-    if(userName) {
+    if (userName) {
       next({ path: '/' })
     } else {
       next()
@@ -67,28 +74,28 @@ router.beforeEach((to, from, next) => {
 * 加载动态菜单和路由
 */
 function addDynamicMenuAndRoutes(userName, to, from) {
-  if(store.state.app.menuRouteLoaded) {
+  if (store.state.app.menuRouteLoaded) {
     console.log('动态菜单和路由已经存在.')
     return
   }
-  api.menu.findNavTree({'userName':userName})
-  .then(res => {
-    // 添加动态路由
-    let dynamicRoutes = addDynamicRoutes(res.data)
-    router.options.routes[0].children = router.options.routes[0].children.concat(dynamicRoutes)
-    router.addRoutes(router.options.routes)
-    // 保存加载状态
-    store.commit('menuRouteLoaded', true)
-    // 保存菜单树
-    store.commit('setNavTree', res.data)
-  }).then(res => {
-    api.user.findPermissions({'name':userName}).then(res => {
-      // 保存用户权限标识集合
-      store.commit('setPerms', res.data)
+  api.menu.findNavTree({ 'userName': userName })
+    .then(res => {
+      // 添加动态路由
+      let dynamicRoutes = addDynamicRoutes(res.data)
+      router.options.routes[0].children = router.options.routes[0].children.concat(dynamicRoutes)
+      router.addRoutes(router.options.routes)
+      // 保存加载状态
+      store.commit('menuRouteLoaded', true)
+      // 保存菜单树
+      store.commit('setNavTree', res.data)
+    }).then(res => {
+      api.user.findPermissions({ 'name': userName }).then(res => {
+        // 保存用户权限标识集合
+        store.commit('setPerms', res.data)
+      })
     })
-  })
-  .catch(function(res) {
-  })
+    .catch(function (res) {
+    })
 }
 
 /**
@@ -96,12 +103,12 @@ function addDynamicMenuAndRoutes(userName, to, from) {
 * @param {*} menuList 菜单列表
 * @param {*} routes 递归创建的动态(菜单)路由
 */
-function addDynamicRoutes (menuList = [], routes = []) {
- var temp = []
- for (var i = 0; i < menuList.length; i++) {
-   if (menuList[i].children && menuList[i].children.length >= 1) {
-     temp = temp.concat(menuList[i].children)
-   } else if (menuList[i].url && /\S/.test(menuList[i].url)) {
+function addDynamicRoutes(menuList = [], routes = []) {
+  var temp = []
+  for (var i = 0; i < menuList.length; i++) {
+    if (menuList[i].children && menuList[i].children.length >= 1) {
+      temp = temp.concat(menuList[i].children)
+    } else if (menuList[i].url && /\S/.test(menuList[i].url)) {
       menuList[i].url = menuList[i].url.replace(/^\//, '')
       // 创建路由配置
       var route = {
@@ -118,23 +125,23 @@ function addDynamicRoutes (menuList = [], routes = []) {
         // 如url="sys/user"，则组件路径应是"@/views/sys/user.vue",否则组件加载不到
         let array = menuList[i].url.split('/')
         let url = ''
-        for(let i=0; i<array.length; i++) {
-          url += array[i].substring(0,1).toUpperCase() + array[i].substring(1) + '/'
+        for (let i = 0; i < array.length; i++) {
+          url += array[i].substring(0, 1).toUpperCase() + array[i].substring(1) + '/'
         }
         url = url.substring(0, url.length - 1)
         route['component'] = resolve => require([`@/views/${url}`], resolve)
-      } catch (e) {}
+      } catch (e) { }
       routes.push(route)
-   }
- }
- if (temp.length >= 1) {
-   addDynamicRoutes(temp, routes)
- } else {
-   console.log('动态路由加载...')
-   console.log(routes)
-   console.log('动态路由加载完成.')
- }
- return routes
+    }
+  }
+  if (temp.length >= 1) {
+    addDynamicRoutes(temp, routes)
+  } else {
+    console.log('动态路由加载...')
+    console.log(routes)
+    console.log('动态路由加载完成.')
+  }
+  return routes
 }
 
 export default router

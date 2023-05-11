@@ -1,8 +1,8 @@
 /*
  * @Author: chixiaoyu 
  * @Date: 2023-05-10 21:23:32 
- * @Last Modified by:   chixiaoyu 
- * @Last Modified time: 2023-05-10 21:23:32 
+ * @Last Modified by: chixiaoyu
+ * @Last Modified time: 2023-05-11 23:44:18
  */
 <template>
     <div class="page-container">
@@ -17,7 +17,7 @@
                         @click="findPage(null)" />
                 </el-form-item>
                 <el-form-item>
-                    <kt-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:user:add2" type="primary"
+                    <kt-button icon="fa fa-plus" :label="$t('action.add')" perms="sys:user:add" type="primary"
                         @click="handleAdd" />
                 </el-form-item>
             </el-form>
@@ -80,8 +80,8 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button :size="size" @click.native="dialogVisible = false">{{ $t('action.cancel') }}</el-button>
-                <el-button :size="size" type="primary" @click.native="submitForm"
-                    :loading="editLoading">{{ $t('action.submit') }}</el-button>
+                <el-button :size="size" type="primary" @click.native="submitForm" :loading="editLoading">{{
+                    $t('action.submit') }}</el-button>
             </div>
         </el-dialog>
     </div>
