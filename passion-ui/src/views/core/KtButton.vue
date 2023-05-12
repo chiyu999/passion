@@ -2,7 +2,7 @@
  * @Author: chixiaoyu 
  * @Date: 2023-05-11 19:00:56 
  * @Last Modified by: chixiaoyu
- * @Last Modified time: 2023-05-11 23:50:14
+ * @Last Modified time: 2023-05-12 12:48:49
  */
 <template>
     <el-button :size="size" :type="type" :icon="icon" :loading="loading" :disabled="!hasPerms(perms)" @click="handleClick">
@@ -55,7 +55,7 @@ export default {
         },
         hasPerms: function (perms) {
             // 根据权限标识和外部指示状态进行权限判断
-            return hasPermission(perms) & !this.disabled
+            return !hasPermission(perms) & !this.disabled
         }
     },
     mounted() {
