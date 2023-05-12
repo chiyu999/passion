@@ -1,3 +1,9 @@
+/*
+ * @Author: chixiaoyu 
+ * @Date: 2023-05-12 13:21:03 
+ * @Last Modified by:   chixiaoyu 
+ * @Last Modified time: 2023-05-12 13:21:03 
+ */
 /* 
  * 菜单管理模块
  */
@@ -150,7 +156,7 @@ export function findNavTree() {
         "lastUpdateTime": "2023-12-27T03:03:45.000+0000",
         "parentId": 43,
         "name": "数据监控",
-        "url": "http://139.196.87.48:8001/druid/login.html",
+        "url": "http://127.0.0.1:8001/druid/login.html",
         "perms": null,
         "type": 1,
         "icon": "el-icon-warning",
@@ -167,7 +173,7 @@ export function findNavTree() {
         "lastUpdateTime": "2023-12-27T03:03:53.000+0000",
         "parentId": 43,
         "name": "服务监控",
-        "url": "http://139.196.87.48:8000/",
+        "url": "http://127.0.0.1:8000/",
         "perms": "",
         "type": 1,
         "icon": "el-icon-view",
@@ -201,7 +207,7 @@ export function findNavTree() {
         "lastUpdateTime": "2023-12-27T03:08:11.000+0000",
         "parentId": 44,
         "name": "注册中心",
-        "url": "http://139.196.87.48:8500",
+        "url": "http://127.0.0.1:8500",
         "perms": "",
         "type": 1,
         "icon": " el-icon-view",
@@ -219,7 +225,7 @@ export function findNavTree() {
       "lastUpdateTime": "2023-12-27T03:04:18.000+0000",
       "parentId": 0,
       "name": "接口文档",
-      "url": "http://139.196.87.48:8001/swagger-ui.html",
+      "url": "http://127.0.0.1:8001/swagger-ui.html",
       "perms": null,
       "type": 1,
       "icon": "el-icon-document",
@@ -793,7 +799,7 @@ export function findMenuTree() {
         "lastUpdateTime": "2023-12-27T03:03:45.000+0000",
         "parentId": 43,
         "name": "数据监控",
-        "url": "http://139.196.87.48:8001/druid/login.html",
+        "url": "http://127.0.0.1:8001/druid/login.html",
         "perms": null,
         "type": 1,
         "icon": "el-icon-warning",
@@ -810,7 +816,7 @@ export function findMenuTree() {
         "lastUpdateTime": "2023-12-27T03:03:53.000+0000",
         "parentId": 43,
         "name": "服务监控",
-        "url": "http://139.196.87.48:8000/",
+        "url": "http://127.0.0.1:8000/",
         "perms": "",
         "type": 1,
         "icon": "el-icon-view",
@@ -844,7 +850,7 @@ export function findMenuTree() {
         "lastUpdateTime": "2023-12-27T03:08:11.000+0000",
         "parentId": 44,
         "name": "注册中心",
-        "url": "http://139.196.87.48:8500",
+        "url": "http://127.0.0.1:8500",
         "perms": "",
         "type": 1,
         "icon": " el-icon-view",
@@ -862,7 +868,7 @@ export function findMenuTree() {
       "lastUpdateTime": "2023-12-27T03:04:18.000+0000",
       "parentId": 0,
       "name": "接口文档",
-      "url": "http://139.196.87.48:8001/swagger-ui.html",
+      "url": "http://127.0.0.1:8001/swagger-ui.html",
       "perms": null,
       "type": 1,
       "icon": "el-icon-document",
@@ -949,14 +955,14 @@ export function findMenuTree() {
 }
 
 export function setParentName(data) {
-  if(data == null) {
+  if (data == null) {
     return
   }
   let len = data.length
-  for(let i=0; i<len; i++) {
+  for (let i = 0; i < len; i++) {
     let menu = data[i]
     menu.parentName = 'menu' + menu.parentId
-    if(menu.children != null) {
+    if (menu.children != null) {
       setParentName(menu.children)
     }
   }
