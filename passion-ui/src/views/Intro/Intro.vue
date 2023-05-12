@@ -1,8 +1,8 @@
 /*
  * @Author: chixiaoyu 
  * @Date: 2023-05-10 21:13:31 
- * @Last Modified by:   chixiaoyu 
- * @Last Modified time: 2023-05-10 21:13:31 
+ * @Last Modified by: chixiaoyu
+ * @Last Modified time: 2023-05-12 13:02:57
  */
 <template>
     <div class="page-container" style="width:99%;margin-top:15px;">
@@ -12,7 +12,7 @@
           <ul>
             <li>基于 Spring Boot、Spring Cloud、Vue、Element 的 Java EE 快速开发平台</li>
           </ul>
-          <div><img src="@/assets/logo.png" style="width:120px;height:120px;padding-top:15px;" /></div>
+          <div><img src="@/assets/intro.png" style="width:384px;height:240px;padding-top:15px;" /></div>
         </el-carousel-item>
         <el-carousel-item class="carousel-item-func">
           <h2>功能计划</h2>
@@ -155,12 +155,12 @@
       box-shadow: 0 0 25px #a3b3b965;
     }
     .carousel-item-intro {
-      background-color: #b95e5e;
+      background-color: pink;
     }
     .carousel-item-func {
-      background-color: #52c578;
+      background-color: greenyellow;
     }
     .carousel-item-env {
-      background-color: #41a7b9;
+      background-color: burlywood;
     }
   </style>
