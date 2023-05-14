@@ -1,0 +1,15 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/passion?useUnicode=true&zeroTimeBEhavior=converToNull&AutoReconnect=true&charsetEncoding=utf-8
+    username: root
+    password: root
+#解决
+#swagger Failed to start bean 'documentationPluginsBootstrapper'; nested exception is java.lang.NullPointerException
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
