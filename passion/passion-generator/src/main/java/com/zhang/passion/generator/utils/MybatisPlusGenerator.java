@@ -15,8 +15,8 @@ import java.util.Scanner;
 
 /**
  * Description:
- * Author:
- * Date:
+ * Author: chixiaoyu
+ * Date: 2023/05/14
  */
 
 public class MybatisPlusGenerator {
