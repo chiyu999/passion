@@ -1,8 +1,8 @@
 /*
  * @Author: chixiaoyu 
  * @Date: 2023-05-12 13:21:03 
- * @Last Modified by:   chixiaoyu 
- * @Last Modified time: 2023-05-12 13:21:03 
+ * @Last Modified by: chixiaoyu
+ * @Last Modified time: 2023-05-22 12:05:30
  */
 /* 
  * 菜单管理模块
@@ -225,7 +225,7 @@ export function findNavTree() {
       "lastUpdateTime": "2023-12-27T03:04:18.000+0000",
       "parentId": 0,
       "name": "接口文档",
-      "url": "http://127.0.0.1:8001/swagger-ui.html",
+      "url": "http://127.0.0.1:8081/swagger-ui.html",
       "perms": null,
       "type": 1,
       "icon": "el-icon-document",

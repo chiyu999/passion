@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-05-14
  */
 public interface ISysUserService extends IService<SysUser> {
-
+    SysUser findById(Long id);
 }
